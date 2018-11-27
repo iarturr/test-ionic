@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Solicitar cuenta nueva
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-item>
+    <ion-label color="primary">Tipo de tarjeta</ion-label>
+    <ion-select [(ngModel)]="kindSelected">
+      <ion-option *ngFor="let option of cardKind" [value]="option">{{option.name}}</ion-option>
+    </ion-select>
+  </ion-item>
+  <br><br>
+  <button ion-button color="primary" full round (click)="requestAccount()">Solicitar cuenta</button>
+
+</ion-content>

@@ -1,0 +1,45 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <div *ngIf="displayLogin">
+    <ion-item>
+      <ion-label color="primary" floating>Correo electrónico</ion-label>
+      <ion-input type="email" placeholder="" [(ngModel)]="email"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label color="primary" floating>Contraseña</ion-label>
+      <ion-input type="password" placeholder="" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+
+  <div *ngIf="!displayLogin">
+    <ion-item>
+      <ion-label color="primary" floating>Nombre</ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="firstname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Apellido</ion-label>
+      <ion-input type="text" placeholder="" [(ngModel)]="lastname"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Correo electrónico</ion-label>
+      <ion-input type="email" placeholder="" [(ngModel)]="email"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label color="primary" floating>Contraseña</ion-label>
+      <ion-input type="password" placeholder="" [(ngModel)]="password"></ion-input>
+    </ion-item>
+  </div>
+  <br><br>
+  <button *ngIf="displayLogin" ion-button color="primary" full round (click)="doLogin()">Iniciar sesión</button>
+  <button *ngIf="!displayLogin" ion-button color="primary" full round (click)="doRegister()">Registrar usuario</button>
+  <br>
+  <button *ngIf="!displayLogin" ion-button color="light" full round (click)="doLogin()">Iniciar sesión</button>
+  <button *ngIf="displayLogin" ion-button color="light" full round  (click)="doRegister()">Registrar usuario</button>
+
+</ion-content>

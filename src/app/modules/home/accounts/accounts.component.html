@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Cuentas
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <h1>Bienvenido {{userName}}</h1>
+  <br><br>
+  <button ion-button color="primary" round (click)="addAccount()">Solicitar cuenta nueva</button>
+  <button ion-button color="danger" round (click)="logout()">Cerrar sesion</button>
+  <br><br>
+  <p>
+    <ion-list>
+      <ion-list-header>
+        Cuentas disponibles:
+      </ion-list-header>
+      <ion-item *ngFor="let account of userAccounts">
+        <h2>{{account.name}}</h2>
+        <p>Balance: ${{account.balance}}</p>
+      </ion-item>
+      <ion-item *ngIf="userAccounts?.length === 0">
+        No existen cuentas aprobadas o se encuentran en proceso de aprobación.
+      </ion-item>
+    </ion-list>
+  </p>
+
+</ion-content>
